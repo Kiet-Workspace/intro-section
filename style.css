@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Epilogue', sans-serif;
+    background-color:  #fafefa;
+}
+
+.fade-in {
+    opacity: 60%;
+}
+
+li {
+    list-style: none;
+    color: #686868;
+}
+
+p {
+    margin: 0;
+    color: #686868;
+}
+
+/* header */
+    header {       
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+    }
+
+    .header {
+        font-weight: 700;
+    }
+
+    .open-nav {
+        width: 2rem;
+        height: 2rem;
+    }
+/* Navigation */
+.close-nav {
+    margin: 14px;
+    height: 24px;
+    width: 24px;
+}
+
+nav {
+    /* display: none; */
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+
+    right: -400px;
+    transition: right 0.5s ease-in-out;
+}
+
+.show {
+    right: 0;
+}
+
+.nav-main {
+    position: absolute;
+    right: 0;
+    width: 65%;
+    height: 100%;
+    background-color: #fafafa;    
+}
+
+
+
+.nav-main li {
+    padding: 0.5rem 0.5rem;
+}
+
+.nav-parent:hover .subnav{
+    display: block;
+}
+
+/* sub-nav */
+
+.subnav {
+    display: none;
+    padding-left: 0.5rem;
+    padding-bottom: 0;
+}
+
+.subnav li {    
+    width: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 2.2rem;
+    height: 2.2rem;
+}
+
+.subnav-icon {
+    padding: 0 8px 2px;
+}
+
+/* Nav login */
+
+.nav-login {
+    width: 100%;
+    text-align: center;
+    padding: 0 16px;
+}
+
+.login-register {
+    border: 1px solid #686868;
+    border-radius: 14px;
+}
+
+/* main */
+main {
+
+}
+
+/* Main - body */
+
+.main-body {
+    height: 26vh;
+    text-align: center;
+    padding: 0 5%;
+}
+
+.body-heading {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-top: 1.5rem;
+}
+
+.main-picture-mobile {
+    width: 100vw;
+}
+
+.main-picture-desktop {
+    display: none;
+}
+
+.btn-learn-more {
+    height: 2.8rem;
+    width: 40%;
+    border: 0;
+    border-radius: 14px;
+    margin-top: 1rem;
+    color: #fafafa;
+    background-color: black;
+}
+
+/* Footer */
+.logo-footer {
+    display: flex;
+    padding-left: 0;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.client-logo {
+    width: 3rem;
+}
+
