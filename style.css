@@ -7,15 +7,30 @@
 body {
     font-family: 'Epilogue', sans-serif;
     background-color:  #fafefa;
+    height: 100vh;
+    width: 100vw;
 }
 
 .fade-in {
     opacity: 60%;
 }
 
+ul {
+    padding: 0;
+}
+
 li {
     list-style: none;
     color: #686868;
+    cursor: pointer;
+    min-height: 2.5rem;
+    align-items: center;
+    line-height: 2.5rem;
+    transition: ease 0.5s;
+}
+
+li:hover {
+    color: black;
 }
 
 p {
@@ -39,50 +54,53 @@ p {
         height: 2rem;
     }
 /* Navigation */
+nav {   
+    position: absolute;
+    display: none;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+}
 .close-nav {
-    margin: 14px;
+    position: absolute;
+    right: 32px;
     height: 24px;
     width: 24px;
 }
 
-nav {
-    /* display: none; */
-    position: absolute;
-    top: 0;
-    width: 100vw;
-    height: 100vh;
-
-    right: -400px;
-    transition: right 0.5s ease-in-out;
+.nav-part {
+    margin-top: 3rem;
 }
 
-.show {
-    right: 0;
-}
 
 .nav-main {
     position: absolute;
     right: 0;
     width: 65%;
     height: 100%;
-    background-color: #fafafa;    
+    background-color: #fafafa; 
+    padding: 8px 32px;   
 }
 
-
-
-.nav-main li {
-    padding: 0.5rem 0.5rem;
-}
 
 .nav-parent:hover .subnav{
     display: block;
+}
+
+.nav-parent:hover .nav-arrow-down {
+    transform: rotate(180deg);
+}
+
+.nav-arrow-down {
+    width: 0.8rem;
+    margin-left: 0.5rem;
+    transition: linear 0.2s;
 }
 
 /* sub-nav */
 
 .subnav {
     display: none;
-    padding-left: 0.5rem;
     padding-bottom: 0;
 }
 
@@ -93,10 +111,12 @@ nav {
     align-items: center;
     line-height: 2.2rem;
     height: 2.2rem;
+    padding-left: 2rem;
 }
 
 .subnav-icon {
-    padding: 0 8px 2px;
+    width: 1.2rem;
+    margin-right: 1rem;
 }
 
 /* Nav login */
@@ -104,12 +124,18 @@ nav {
 .nav-login {
     width: 100%;
     text-align: center;
-    padding: 0 16px;
 }
 
 .login-register {
     border: 1px solid #686868;
     border-radius: 14px;
+    transition: ease 0.5s;
+}
+
+.login-register:hover {
+    border-color: black;
+    color: #fff;
+    background-color: black;
 }
 
 /* main */
@@ -120,7 +146,7 @@ main {
 /* Main - body */
 
 .main-body {
-    height: 26vh;
+    min-height: 26vh;
     text-align: center;
     padding: 0 5%;
 }
@@ -140,6 +166,7 @@ main {
 }
 
 .btn-learn-more {
+    font-weight: 700;
     height: 2.8rem;
     width: 40%;
     border: 0;
@@ -158,7 +185,221 @@ main {
     margin-top: 2rem;
 }
 
-.client-logo {
-    width: 3rem;
+.logo-audiophile {
+    height: 1.4rem;
 }
 
+.client-logo {
+    height: 1rem;
+}
+
+/* Media query desktop */
+@media screen and (min-width: 992px) {
+    p {
+        font-size: 1rem;
+    }
+
+    li {
+        font-size: 1rem;
+    }
+
+    ul {
+        margin: 0;
+    }
+    /* change picture */
+    .main-picture-mobile {
+        display: none;
+    }
+
+    .main-picture-desktop {
+        display: block;
+        width: auto;
+        height: 71vh;        
+    }
+
+    /* Nav + Logo */
+        /* header */
+    header {       
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        height: 4rem;
+        padding: 0;
+    }
+
+    .header {
+        font-weight: 700;
+        margin: 0 0 0 1.5rem;
+    }
+    
+    .open-nav {
+        display: none;
+    }
+    
+    .close-nav {
+        display: none;
+    }
+        /* Navigation */
+    nav {
+        display: block;
+        width: 100vw;
+        height: 4rem;
+    }    
+
+    .nav-main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: transparent;
+        width: 100vw;
+        height: 4rem; 
+        padding: 0 0 0 12%;
+    }
+
+    .nav-part, .nav-login {
+        display: flex;
+        margin: 0;
+    }
+
+    .nav-part {        
+        height: 100%;
+    }
+
+    .nav-part>li {        
+        line-height: 4rem;
+    }
+
+    .nav-part>li, .nav-login>li {
+        margin-right: 2rem;
+    }
+
+    .nav-parent {        
+        position: relative;
+    }
+
+    
+
+    .nav-parent:hover .subnav{
+        display: block;
+    }
+
+    /* sub-nav */
+
+    .subnav {
+        display: none;
+        position: absolute;
+        top: 4rem;
+        border-radius: 10px;
+        background-color: #fafafa;
+        box-shadow: 0 0 15px 8px hsla(0, 0%, 41%, 0.2);
+        padding: 0.5rem 1.5rem;
+    }
+
+    .subnav-features {
+        right: 0;
+    }
+
+    .subnav-company {
+        left: 0;
+    }
+
+    .subnav li {    
+        min-width: 5rem;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        line-height: 2rem;
+        height: 2.2rem;
+        padding: 0;
+    }
+
+    .subnav-icon {
+        padding-right: 4px;
+    }
+
+    /* Nav login */
+
+    .nav-login {
+        width: auto;
+        text-align: center;
+        padding: 0 24px;
+    }
+
+    .login-register {
+        border: 1px solid #686868;
+        border-radius: 14px;
+        padding: 0 1rem;
+    }
+
+
+
+
+    /* main */
+
+
+    main {
+        padding: 0 10%;
+    }
+
+    .main-body-footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .main-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: left;
+        height: 45vh;
+        margin-top: 7%;
+    }
+
+    .body-heading {
+        font-size: 3rem;
+        padding-right: 10%;
+    }
+
+    .body-content {
+        padding-right: 12%;
+    }
+
+    .btn-learn-more {
+        height: 3.5rem;
+        width: 30%;
+        margin-top: 1rem;
+        border: none;
+        color: #fff;
+        background-color: black;
+        transition: ease 0.5s;
+    }
+
+    .btn-learn-more:hover {
+        border: 1px #686868 solid;
+        color: #686868;
+        background-color: white;
+    }
+
+    /* footer */
+    
+    .logo-footer {
+        padding: 0 5%;
+        justify-content: space-between;
+    }
+
+    .loogo-container {
+        width: fit-content;
+    }
+
+   .logo-audiophile {
+        width: 4rem;
+        height: auto;
+   }
+
+   .logo-databiz, .logo-meet, .logo-maker {
+        width: 6rem;
+        height: auto;
+   }
+    
+}
