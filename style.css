@@ -116,6 +116,7 @@ nav {
 
 .subnav-icon {
     width: 1.2rem;
+    height: auto;
     margin-right: 1rem;
 }
 
@@ -139,9 +140,7 @@ nav {
 }
 
 /* main */
-main {
 
-}
 
 /* Main - body */
 
@@ -313,8 +312,13 @@ main {
         padding: 0;
     }
 
+    .subnav li:hover .subnav-icon {
+        transform: scale(1.5, 1.5);
+    }
+
     .subnav-icon {
         padding-right: 4px;
+        transition: ease 0.4s;
     }
 
     /* Nav login */
@@ -338,7 +342,7 @@ main {
 
 
     main {
-        padding: 0 10%;
+        padding: 5% 10% 0;
     }
 
     .main-body-footer {
